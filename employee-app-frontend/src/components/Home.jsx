@@ -37,7 +37,7 @@ const Home = () => {
 
 
   return (
-    <div style={{margin:'5%'}}>
+    <div style={{margin:'1%'}}>
         <Grid container spacing={2}>
             {cardData.map((row) => (
             <Grid size={4}>
