@@ -23,7 +23,7 @@ const Signup = () => {
             return;
         }
         try {
-            const response = await axiosInstance.post('http://localhost:3000/users/adduser', form);
+            const response = await axiosInstance.post(`${import.meta.env.Vite_Api}/users/adduser`, form);
             alert(response.data);
             setForm({ email: '', password: '', confirmpassword:''}); // Reset form
             navigate('/'); 

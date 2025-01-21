@@ -24,7 +24,7 @@ const Addemployee = () => {
     if (location.state != null) {
       // Update Employee
       axiosInstance
-        .put(`http://localhost:3000/employees/updateemployee/${location.state.val._id}`, form)
+        .put(`${import.meta.env.Vite_Api}/employees/updateemployee/${location.state.val._id}`, form)
         .then((res) => {
           alert(res.data);
           navigate('/employees'); // Redirect to employee list
@@ -36,7 +36,7 @@ const Addemployee = () => {
     } else {
       // Add Employee
       try {
-        const response = await axiosInstance.post('http://localhost:3000/employees/addemployee', form);
+        const response = await axiosInstance.post(`${import.meta.env.Vite_Api}/employees/addemployee`, form);
         alert(response.data);
         setForm({ name: '', designation: '', salary: '', department: '', emplocation: '' }); // Reset form
         navigate('/employees'); // Redirect to employee list
