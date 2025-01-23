@@ -23,7 +23,7 @@ const Home = () => {
     }
 
     const delete_data = (id) => {
-        axiosInstance.delete('/employees/deleteemployee/${id}')
+        axiosInstance.delete(`/employees/deleteemployee/${id}`)
           .then(() => {
             setData(cardData.filter((item) => item._id !== id)); // Update the UI after deletion
             alert("Employee deleted successfully");
