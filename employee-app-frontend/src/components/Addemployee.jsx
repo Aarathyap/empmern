@@ -24,7 +24,7 @@ const Addemployee = () => {
     if (location.state != null) {
       // Update Employee
       axiosInstance
-        .put(`${import.meta.env.Vite_Api}/employees/updateemployee/${location.state.val._id}`, form)
+        .put(`/employees/updateemployee/${location.state.val._id}`, form)
         .then((res) => {
           alert(res.data);
           navigate('/employees'); // Redirect to employee list
